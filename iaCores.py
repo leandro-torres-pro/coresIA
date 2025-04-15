@@ -1,12 +1,11 @@
 from typing import Any
-
 import spacy
 import json
 from spacy.training.example import Example
 
-
-nlp = spacy.load("modelo_cor")
 '''
+nlp = spacy.load("modelo_cor")
+
 print(nlp.pipe_names)
 
 doc = nlp('As ações da Magazine Luiza S.A. são azuis, Franca, Brasil é amarelo, acumularam baixa de 70% ao ano.')
@@ -38,12 +37,12 @@ print("Formato: ", [token.shape_ for token in doc])
 for entidade in doc.ents:
   print("Entidade: ", entidade.text, " Label: ", entidade.label_)
 
-'''
+
 # Carregue o modelo pré-treinado em português
 
 #aqui!!!
 nlp = spacy.blank('pt')
-''''
+
 # Defina as classes de rótulo
 LABELS = ["COR"]
 
@@ -113,20 +112,21 @@ for i in range(500):  # Executar iterações de treinamento
 # Salve o modelo treinado
 nlp.to_disk("modelo_cor")
 
-'''
 
+'''
 modelo_treinado = spacy.load("modelo_cor")
 
-doc = modelo_treinado("Numa folha qualquer Eu desenho um sol amarelos E com cinco ou seis retas É fácil fazer um castelo Com o lápis em torno da mão E me dou uma luva E se faço chover Com dois riscos tenho um guarda-chuva Se um pinguinho de tinta Cai num pedacinho azul do papel Num instante imagino Uma linda gaivota a voar no céu Vai voando Contornando a imensa curva, norte, sul Vou com ela viajando Havaí, Pequim ou Istambul Pinto um barco à vela branco, navegando É tanto céu e mar num beijo azul Entre as nuvens vem surgindo Um lindo avião rosa e grená Tudo em volta colorindo Com suas luzes a piscar Basta imaginar e ele está partindo Sereno indo E se a gente quiser Ele vai pousar Numa folha qualquer Eu desenho um navio de partida Com alguns bons amigos Bebendo de bem com a vida De uma América a outra Eu consigo passar num segundo Giro um simples compasso E num círculo eu faço o mundo Um menino caminha E caminhando chega num muro E ali logo em frente A esperar pela gente o futuro está E o futuro é uma astronave Que tentamos pilotar Não tem tempo, nem piedade Nem tem hora de chegar Sem pedir licença, muda a nossa vida E depois convida a rir ou chorar Nessa estrada não nos cabe Conhecer ou ver o que virá O fim dela ninguém sabe Bem ao certo onde vai dar Vamos todos numa linda passarela De uma aquarela Que um dia enfim descolorirá Numa folha qualquer Eu desenho um sol amarelo (que descolorirá) E com cinco ou seis retas É fácil fazer um castelo (que descolorirá) Giro um simples compasso E num círculo eu faço o mundo (que descolorirá)")
+doc = modelo_treinado("O céu da manhã vestia um azul-claro suave, tão tranquilo como o mar calmo em uma praia isolada. As flores de uma planta no jardim, com seus pétalos amarelos vibrantes, pareciam pequenas estrelas no meio do verde intenso da grama. A casa, de paredes brancas e telhado terracota, refletia a luz do sol de maneira acolhedora, como se convidasse todos a entrar. No canto da sala, uma poltrona de veludo verde-escuro oferecia um contraste acolhedor contra o tapete beige que cobria o piso de madeira escura. Na cozinha, as maçãs vermelhas brilhavam em uma tigela de cerâmica azul, suas superfícies polidas como jóias. O relógio de parede, com números dourados e ponteiros prateados, marcava as horas em um ritmo calmo, enquanto a parede amarela refletia a luz suave que entrava pela janela. Um vaso de flores roxas, com suas pétalas exuberantes, ficava sobre a mesa de jantar, criando um ponto de cor contrastante com o branco da toalha de linho. A bicicleta encostada no portão era pintada de um vermelho-escuro, quase borgonha, contrastando com o cinza do asfalto da rua. Um conjunto de livros de capa preta estava empilhado em uma prateleira, ao lado de um caderno de capa lilás, que se destacava pela suavidade do tom. A luz do fim da tarde projetava sombras longas e douradas sobre o chão de ladrilhos brancos. No corredor, uma lâmpada de vidro opaco lançava um brilho suave sobre a parede cinza-claro. O espelho de moldura dourada na parede refletia a luz, criando um jogo de cores e formas. Ao lado, uma pequena planta de folhas verdes escuras, quase negras, trazia um pouco da natureza para dentro de casa. No fundo, uma porta de madeira pintada de azul-marinho contrastava com as paredes de tom neutro. No jardim, o banco de ferro pintado de verde-musgo parecia quase fundir-se com o ambiente ao seu redor, enquanto as flores de lavanda em tons lilases e roxos exalavam uma fragrância suave no ar. As pedras brancas do caminho serpenteavam entre as plantas, criando uma sensação de paz e tranquilidade. A grama, em um tom verde-claro, cobria o solo com uma maciez que contrastava com o tom forte da madeira escura do banco. No hall de entrada, uma luminária de cristal refletia a luz, criando uma dança de brilhos e sombras sobre o piso de mármore branco. A porta de entrada, de um marrom escuro, parecia robusta e sólida, acolhendo todos que chegavam. O tapete persa, com seus tons de vermelho e azul, acolhia os pés que pisavam no chão frio, aquecendo o ambiente. A sala de estar, com suas cortinas de veludo cinza-escuro, era complementada por almofadas de cores vivas: laranja, vermelho, azul e até um verde-água. O sofá, de um bege suave, contrastava com os quadros coloridos na parede. Cada obra de arte, com seus tons vibrantes de vermelho, azul, amarelo e preto, trazia uma energia única para o ambiente. O fogo da lareira, em chamas laranja e amareladas, aquecia o ambiente, criando um contraste com o azul profundo da noite que se aproximava. No jardim de inverno, as folhas das plantas tropicais se destacavam em diferentes tons de verde. O tapete macio sob os pés era de um azul-petróleo, dando um toque de sofisticação ao ambiente. O vaso de cerâmica, pintado à mão em tons de terracota, trazia um calor acolhedor, enquanto os refletores de luz branca iluminavam suavemente a cena, criando sombras delicadas no piso. Cada detalhe, desde os móveis de madeira escura até os objetos de decoração coloridos, formava um quadro harmônico e equilibrado. O contraste entre as cores vibrantes e as neutras trazia uma sensação de acolhimento e tranquilidade. No fundo, o céu azul escuro anunciava o fim do dia, mas dentro de casa, a luz suave das lâmpadas criava um ambiente acolhedor, como se o tempo tivesse parado ali.")
 docTeste = "Azul-claro, amarelo, verde, brancas, terracota, verde-escuro, beige, vermelhas, azul, dourados, prateados, amarela, roxas, branco, vermelho-escuro, Borgonha, cinza, preta, lilás, douradas, brancos, cinza-claro, dourada, verdes escuras, azul, verde-musgo, lilases, roxos, verde-claro, marrom escuro, vermelho, cinza-escuro, laranja, verde-água, bege, amarelo, preto, amareladas, azul-petróleo, branca,azul escuro,"
 
 
 
 textoValidacao = [item.strip() for item in docTeste.split(",")]#organizar a string para comprarar
 print(textoValidacao)
+print(len(textoValidacao))
 # for token in doc:
 #   print(token.text)
-""
+
 
 def calculoRecall(tp, fn):
     recall = float(100*(tp / (tp + fn)))
